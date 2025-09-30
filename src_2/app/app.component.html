@@ -1,0 +1,51 @@
+<!--Llamada a la componente 1 para que se vea en appcomponent-->
+<div class="container">
+  <app-menu></app-menu>
+  
+  <!--esto es html normal y corriente dentro de app.component.html-->
+  <h3>Esto es la app.component.html</h3>
+  <div>Hola</div>
+  <p>{{title}}</p>
+  <p>{{name}}</p>
+  <p>{{age}}</p>
+  <p>{{numbers}}</p>
+   <p>{{numbers[2]}}</p>
+   <p>{{resultatfinal()}}</p>
+   <form>
+    <label>Dame tu nombre</label>:
+    <input type="text" [value]="name">
+    <button> Enviar </button>
+    
+   </form>
+   <!--Esdeveniments-->
+   <h2>{{counter}}</h2>
+   <button (click)="incrementa()">Sumar 1</button>
+   <button (click)="decrementa()">Restar 1</button>
+   <!--Alternatives i bucles-->
+   @if(age>=18){
+    <p>És major d'edat</p>
+   }@else {
+    <p>És menor d'edat</p>
+   }
+   <!--La manera vella, necesites importat CommonModule al .ts -->
+   <p *ngIf="age>=18">És major d'edat</p>
+
+   
+   @switch(generarNombre()){
+    @case(1){
+      <p>U</p>
+    }
+    @case(2){
+      <p>Dos</p>
+    }
+    @case(3){
+      <p>Tres</p>
+    }
+   }
+
+   @for(num of numbers;track num){
+    <p>{{num}}</p>
+   }
+</div>
+
+<router-outlet />
