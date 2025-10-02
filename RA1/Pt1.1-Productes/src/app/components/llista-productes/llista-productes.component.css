@@ -1,0 +1,23 @@
+/* El título centrado ya está bien */
+/* Contenedor de todas las cards */
+.cards-container {
+  display: flex;        /* activa flexbox */
+  flex-wrap: wrap;      /* que bajen a otra fila si no caben */
+  gap: 20px;            /* espacio entre ellas */
+  justify-content: center; /* centradas horizontalmente */
+}
+
+/* Cada card individual */
+.card {
+  max-width: 300px;
+  flex: 1 1 250px;      /* permite que se adapten un poco al espacio */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  background-color: rgb(69, 103, 103);
+  color: white;
+}
+.display-4{
+  text-align: center;
+}
