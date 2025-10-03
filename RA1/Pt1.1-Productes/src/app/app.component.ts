@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet} from '@angular/router';
-import { LlistaProductesComponent } from "./components/llista-productes/llista-productes.component";
 import { MenuComponent } from "./components/menu/menu.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LlistaProductesComponent, MenuComponent],
+  imports: [RouterOutlet, MenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

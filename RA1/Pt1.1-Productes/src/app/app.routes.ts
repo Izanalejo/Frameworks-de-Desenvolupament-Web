@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LlistaProductesComponent } from './components/llista-productes/llista-productes.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { ShowproductsComponent } from './components/showproducts/showproducts.component';
 
 export const routes: Routes = [
     {
@@ -14,5 +16,13 @@ export const routes: Routes = [
     {
         path:'llistaProductes',
         component: LlistaProductesComponent
+    },
+    {
+        path:'showproducts/:id',
+        component: ShowproductsComponent
+    },
+    {
+        path: '**',
+        component: PagenotfoundComponent
     }
 ];

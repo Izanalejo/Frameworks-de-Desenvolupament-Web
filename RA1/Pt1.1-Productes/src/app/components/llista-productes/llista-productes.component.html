@@ -1,6 +1,6 @@
 <h1 class="display-4 fw-bolder text-center mb-5">CATÀLEG DE PRODUCTES</h1>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-4 g-4">
   @for(art of articulos; track art){
     <div class="col mb-5">
       <div class="card h-100">
@@ -15,19 +15,11 @@
             <p>{{art.descripcio}}</p>
             <h3><cite>{{art.preu}}€</cite></h3>
           </div>
-          <div class="d-flex justify-content-center small text-warning mb-2">
-            <div class="bi-star-fill"></div>
-            <div class="bi-star-fill"></div>
-            <div class="bi-star-fill"></div>
-            <div class="bi-star-fill"></div>
-            <div class="bi-star-fill"></div>
-          </div>
-          <span class="text-muted text-decoration-line-through">{{art.preu}}</span>
         </div>
         <!-- Product actions-->
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
           <div class="text-center">
-            <a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+            <a class="btn btn-outline-dark mt-auto" (click)="goToShow(art.id)">Show product</a>
           </div>
         </div>
       </div>
