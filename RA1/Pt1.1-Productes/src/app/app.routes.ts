@@ -3,6 +3,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { LlistaProductesComponent } from './components/llista-productes/llista-productes.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { ShowproductsComponent } from './components/showproducts/showproducts.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
     {
@@ -24,6 +25,10 @@ export const routes: Routes = [
     {
         path: "product/:nom", 
         component: ShowproductsComponent 
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: '**',

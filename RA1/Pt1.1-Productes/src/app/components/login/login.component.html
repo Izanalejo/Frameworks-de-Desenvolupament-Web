@@ -1,0 +1,34 @@
+<p>login</p>
+<form [formGroup]="formLogin" (ngSubmit)="submit()">
+    <p>
+        Nombre:
+        <input type="text" formControlName="nombre" required />
+
+        @if(this.formLogin.get('nombre')?.errors?.['required']) {
+        <span>(El nombre no puede quedar vacío)</span>
+        } @if(this.formLogin.get('nombre')?.errors?.['minlength']) {
+        <span>(Debe tener como mínimo 5 caracteres)</span>
+        }
+    </p>
+    <p>
+        Contraseña:
+        <input type="password" formControlName="nombre" required />
+
+        @if(this.formLogin.get('contrasenya')?.errors?.['required']) {
+        <span>(La contraseña no puede quedar vacía)</span>
+        } @if(this.formLogin.get('contrasenya')?.errors?.['maxlength']) {
+        <span>(Debe tener como mínimo 5 caracteres)</span>
+        }
+    </p>
+    <p>
+        Email:
+        <input type="email" formControlName="nombre" required />
+
+        @if(this.formLogin.get('email')?.errors?.['required']) {
+        <span>(El correo no puede quedar vacio)</span>
+        } @if(this.formLogin.get('email')?.errors?.['minlength']) {
+        <span>(Debes poner un email)</span>
+        }
+    </p>
+    <button type="submit">Confirmar</button>
+</form>
