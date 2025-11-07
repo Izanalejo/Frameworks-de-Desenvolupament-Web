@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-llista-productes',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './llista-productes.component.html',
   styleUrl: './llista-productes.component.css'
 })
 export class LlistaProductesComponent {
   constructor(private router: Router){} //Inyeccion para que recnozca router
- articulos = [
+ articulos:any[] = [
   {
     id: 1,
     nom: "Procesador Intel i7-11700K",
@@ -251,7 +251,7 @@ export class LlistaProductesComponent {
   },
   {
     id: 35,
-    nom: "Procesador Intel Core i9-14900KF 3.2/6GHz Box",
+    nom: "Procesador Intel Core i9-14900KF 3.2",
     descripcio: "8 P-Cores, 16 E-Cores y hasta 6.0GHz con caché de 36MB.",
     preu: 457.42,
     oferta: "sí"
@@ -285,9 +285,10 @@ export class LlistaProductesComponent {
     oferta: "sí"
   }
 ];
-goToShow(id:number){
+
+goToShow(nombre:string){
   
-  this.router.navigateByUrl(`/showproducts/${id}`);
+  this.router.navigateByUrl(`/showproducts/${nombre}`);
 }
 }
 

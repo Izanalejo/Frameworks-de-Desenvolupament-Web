@@ -18,8 +18,12 @@ export const routes: Routes = [
         component: LlistaProductesComponent
     },
     {
-        path:'showproducts/:id',
+        path:'showproducts/:nombre',
         component: ShowproductsComponent
+    },
+    {
+        path: "product/:nom", 
+        component: ShowproductsComponent 
     },
     {
         path: '**',
