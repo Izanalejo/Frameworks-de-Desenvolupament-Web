@@ -9,7 +9,7 @@
 
 /* Cada card individual */
 .card {
-  max-width: 300px;
+  max-width: 700px;
   flex: 1 1 250px;      /* permite que se adapten un poco al espacio */
   border: 1px solid #ddd;
   border-radius: 10px;

@@ -1,0 +1,99 @@
+<form [formGroup]="formRegister" (ngSubmit)="submit()">
+    <h1>Formulario de Registro</h1>
+    <p>
+        Nombre:
+        <input type="text" formControlName="nombre" required />
+
+        @if(this.formRegister.get('nombre')?.touched){ 
+            @if(this.formRegister.get('nombre')?.errors?.['required']) {
+            <span style="color: red;">(El nombre no puede quedar vacío)</span>
+            } @if(this.formRegister.get('nombre')?.errors?.['minlength']) {
+            <span style="color: red;">(Debe tener como mínimo 5 caracteres)</span>
+            }
+        }
+    </p>
+    <p>
+        Población:
+        <input type="text" formControlName="poblacion" required />
+
+        @if(this.formRegister.get('poblacion')?.touched){ 
+            @if(this.formRegister.get('poblacion')?.errors?.['required']) {
+            <span style="color: red;">(La población no puede quedar vacío)</span>
+            } @if(this.formRegister.get('poblacion')?.errors?.['pattern']) {
+            <span style="color: red;">(Debe ser un texto válido)</span>
+            }
+        }
+    </p>
+    <p>
+        Email:
+        <input type="email" formControlName="email" required />
+
+        @if(this.formRegister.get('email')?.touched){ 
+
+            @if(this.formRegister.get('email')?.errors?.['required']) {
+            <span style="color: red;">El correo no puede quedar vacio</span>
+            } @if(this.formRegister.get('email')?.errors?.['pattern']) {
+            <span style="color: red;">Debes poner un email</span>
+            }
+        }
+    </p>
+    <p>
+        DNI:
+        <input type="text" formControlName="dni" required />
+        @if(this.formRegister.get('dni')?.touched){ 
+            @if(this.formRegister.get('dni')?.errors?.['required']) {
+            <span style="color: red;">El DNI no puede quedar vacio</span>
+            } @if(this.formRegister.get('dni')?.errors?.['pattern']) {
+            <span style="color: red;">Debes poner un DNI válido</span>
+            }
+        }
+    </p>
+    <p>
+        Codigo postal:
+        <input type="text" formControlName="codiP" required />
+        @if(this.formRegister.get('dni')?.touched){ 
+            @if(this.formRegister.get('codiP')?.errors?.['required']){
+                <span style="color: red;">El codigo postal no puede quedar vacío</span>
+            } @if(this.formRegister.get('codiP')?.errors?.['pattern']){
+                <span style="color: red;">El codigo postal no es válido</span>
+            }
+        }
+    </p>
+    <p>
+        Dirección:
+        <input type="text" formControlName="direccion" required />
+
+        @if(this.formRegister.get('direccion')?.touched){
+            @if(this.formRegister.get('direccion')?.errors?.['required']){
+                <span style="color: red;">La dirección no puede quedar vacía</span>
+
+            }
+        }
+    </p>
+    <p>
+        Fecha de nacimiento:
+        <input type="date" formControlName="fecha" required />
+        @if(this.formRegister.get('fecha')?.touched){
+            @if(this.formRegister.get('fecha')?.errors?.['required']){
+                <span style="color: red;">La fecha no puede quedar vacía!</span>
+            } @if(this.formRegister.get('direccion')){
+                <span style="color: red;">La fecha no es válida</span>
+            }
+        }
+    </p>
+    <p>
+        Sexo:<br />
+        <input type="radio" name="sexo" formControlName="sexo" required /> Masculino
+        <input type="radio" name="sexo" formControlName="sexo" required /> Femenino
+        <input type="radio" name="sexo" formControlName="sexo" required /> Otro
+
+        @if(this.formRegister.get('sexo')?.errors){
+            @if(this.formRegister.get('sexo')?.errors?.['required']){
+                <span style="color: red;">Has de elegir una opción</span>
+            }
+        }
+    </p>
+    <button type="submit">Registrar</button>
+</form>
+
+<!-- nombre, direccion, codigo postal, Poblacion, Email, fecha de nac, DNI, Sexo(radio)-->
