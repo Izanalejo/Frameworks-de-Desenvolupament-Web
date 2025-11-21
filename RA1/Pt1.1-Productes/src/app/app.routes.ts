@@ -5,6 +5,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { ShowproductsComponent } from './components/showproducts/showproducts.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { MyPipesComponent } from './components/my-pipes/my-pipes.component';
 
 export const routes: Routes = [
     {
@@ -34,6 +35,10 @@ export const routes: Routes = [
     {
         path: 'registro',
         component: RegistroComponent
+    },
+    {
+        path: 'pipes',
+        component: MyPipesComponent
     },
     {
         path: '**',
