@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-compo3',
@@ -16,9 +18,14 @@ export class Compo3Component {
   numbers:number[] = [3,5,78,125];
 
   //se puede poner o no el constructor si está vacio
-  constructor(){
+  constructor(private cookieService: CookieService){
     this.name = 'Izan Alejo';
-
+    let contador = 0;
+    if(!this.cookieService.set){
+      this.cookieService.set('Contador', `${contador}`,{expires:2});
+    }else{
+      contador++;
+    }
   }
 
   //mètodes
