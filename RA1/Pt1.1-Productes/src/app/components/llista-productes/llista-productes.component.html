@@ -1,7 +1,7 @@
 <h1 class="display-4 fw-bolder text-center mb-5">CATÀLEG DE PRODUCTES</h1>
 
 <div class="row row-cols-1 row-cols-md-4 g-4">
-  @for(art of articulos; track art){
+  @for(art of articulos |  paginate: { itemsPerPage: 12, currentPage: p }; track art){
     <div class="col mb-5">
       <div class="card h-100">
         <!-- Product image-->
@@ -22,4 +22,5 @@
       </div>
     </div>
   }
+   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

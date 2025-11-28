@@ -22,7 +22,7 @@ export class Compo3Component {
     this.name = 'Izan Alejo';
     let contador = 0;
     if(!this.cookieService.set){
-      this.cookieService.set('Contador', `${contador}`,{expires:2});
+      this.cookieService.set('Contador', 'HelloWorld',{expires:2});
     }else{
       contador++;
     }
