@@ -8,7 +8,7 @@
             @if(this.formRegister.get('nombre')?.errors?.['required']) {
             <span style="color: red;">(El nombre no puede quedar vacío)</span>
             } @if(this.formRegister.get('nombre')?.errors?.['minlength']) {
-            <span style="color: red;">(Debe tener como mínimo 5 caracteres)</span>
+            <span style="color: red;">(Debe tener como mínimo 2 caracteres)</span>
             }
         }
     </p>
@@ -26,7 +26,7 @@
     </p>
     <p>
         <label class="form-label">Email</label>
-        <input type="email" formControlName="email" class="form-control"equired />
+        <input type="email" formControlName="email" class="form-control" required />
 
         @if(this.formRegister.get('email')?.touched){ 
 
@@ -39,12 +39,10 @@
     </p>
     <p>
         <label class="form-label">DNI</label>
-        <input type="text" formControlName="dni" class="form-control"required />
+        <input type="text" formControlName="dni" class="form-control" required />
         @if(this.formRegister.get('dni')?.touched){ 
             @if(this.formRegister.get('dni')?.errors?.['required']) {
             <span style="color: red;">El DNI no puede quedar vacio</span>
-            } @if(this.formRegister.get('dni')?.errors?.['pattern']) {
-            <span style="color: red;">Debes poner un DNI válido</span>
             }
         }
     </p>
@@ -66,7 +64,8 @@
         @if(this.formRegister.get('direccion')?.touched){
             @if(this.formRegister.get('direccion')?.errors?.['required']){
                 <span style="color: red;">La dirección no puede quedar vacía</span>
-
+            } @if(this.formRegister.get('direccion')?.errors?.['pattern']){
+                <span style="color: red;">La dirección no es válida</span>
             }
         }
     </p>
@@ -76,24 +75,22 @@
         @if(this.formRegister.get('fecha')?.touched){
             @if(this.formRegister.get('fecha')?.errors?.['required']){
                 <span style="color: red;">La fecha no puede quedar vacía!</span>
-            } @if(this.formRegister.get('direccion')){
-                <span style="color: red;">La fecha no es válida</span>
             }
         }
     </p>
     <p>
         Sexo:<br/>
-        <input type="radio" id="sexo" value="M" formControlName="sexo" /> Masculino
-        <input type="radio" id="sexo" value="F" formControlName="sexo"  /> Femenino
-        <input type="radio" id="sexo" value="O" formControlName="sexo" /> Otro
+        <input type="radio" name="sexo" value="Masculino" formControlName="sexo" /> Masculino
+        <input type="radio" name="sexo" value="Femenino" formControlName="sexo" /> Femenino
+        <input type="radio" name="sexo" value="Otro" formControlName="sexo" /> Otro
 
-        @if(this.formRegister.get('sexo')?.errors){
+        @if(this.formRegister.get('sexo')?.touched){
             @if(this.formRegister.get('sexo')?.errors?.['required']){
                 <span style="color: red;">Has de elegir una opción</span>
             }
         }
     </p>
-    <button type="submit">Registrar</button>
+    <button type="submit" class="btn btn-secondary">Registrar</button>
 </form>
 
 <!-- nombre, direccion, codigo postal, Poblacion, Email, fecha de nac, DNI, Sexo(radio)-->

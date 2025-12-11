@@ -7,21 +7,33 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a routerLink="/home" class="nav-link active" href="#">Home
+          <a routerLink="/home" class="nav-link active">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/llistaProductes" class="nav-link" href="#">Productes</a>
+          <a routerLink="/llistaProductes" class="nav-link">Productes</a>
         </li>
-        <li>
-          <a routerLink="/login" class="nav-link" href="#">Login</a>
-        </li>
-        <li>
-          <a routerLink="/registro" class="nav-link" href="#">Registro</a>
-        </li>
-        <li>
-          <a routerLink="/pipes" class="nav-link" href="#">Pipes</a>
+        
+        <!-- Mostrar Login y Registro solo si NO está logueado -->
+        @if (!estaLogueado) {
+          <li class="nav-item">
+            <a routerLink="/login" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/registro" class="nav-link">Registro</a>
+          </li>
+        }
+        
+        <!-- Mostrar Logout solo si está logueado -->
+        @if (estaLogueado) {
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" style="cursor: pointer;">Logout</a>
+          </li>
+        }
+        
+        <li class="nav-item">
+          <a routerLink="/pipes" class="nav-link">Pipes</a>
         </li>
       </ul>
     </div>
