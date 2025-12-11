@@ -1,8 +1,8 @@
 <form [formGroup]="formRegister" (ngSubmit)="submit()">
-    <h1>Formulario de Registro</h1>
+    <h1 class="display-4 fw-bolder text-center mb-5">Formulario de Registro</h1>
     <p>
-        Nombre:
-        <input type="text" formControlName="nombre" required />
+        <label class="form-label">Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control" required />
 
         @if(this.formRegister.get('nombre')?.touched){ 
             @if(this.formRegister.get('nombre')?.errors?.['required']) {
@@ -13,8 +13,8 @@
         }
     </p>
     <p>
-        Población:
-        <input type="text" formControlName="poblacion" required />
+        <label class="form-label">Poblacion</label>
+        <input type="text" formControlName="poblacion" class="form-control" required />
 
         @if(this.formRegister.get('poblacion')?.touched){ 
             @if(this.formRegister.get('poblacion')?.errors?.['required']) {
@@ -25,8 +25,8 @@
         }
     </p>
     <p>
-        Email:
-        <input type="email" formControlName="email" required />
+        <label class="form-label">Email</label>
+        <input type="email" formControlName="email" class="form-control"equired />
 
         @if(this.formRegister.get('email')?.touched){ 
 
@@ -38,8 +38,8 @@
         }
     </p>
     <p>
-        DNI:
-        <input type="text" formControlName="dni" required />
+        <label class="form-label">DNI</label>
+        <input type="text" formControlName="dni" class="form-control"required />
         @if(this.formRegister.get('dni')?.touched){ 
             @if(this.formRegister.get('dni')?.errors?.['required']) {
             <span style="color: red;">El DNI no puede quedar vacio</span>
@@ -49,9 +49,9 @@
         }
     </p>
     <p>
-        Codigo postal:
-        <input type="text" formControlName="codiP" required />
-        @if(this.formRegister.get('dni')?.touched){ 
+        <label class="form-label">Código postal</label>
+        <input type="text" formControlName="codiP" class="form-control" required />
+        @if(this.formRegister.get('codiP')?.touched){ 
             @if(this.formRegister.get('codiP')?.errors?.['required']){
                 <span style="color: red;">El codigo postal no puede quedar vacío</span>
             } @if(this.formRegister.get('codiP')?.errors?.['pattern']){
@@ -60,8 +60,8 @@
         }
     </p>
     <p>
-        Dirección:
-        <input type="text" formControlName="direccion" required />
+        <label class="form-label">Direccion</label>
+        <input type="text" formControlName="direccion" class="form-control" required />
 
         @if(this.formRegister.get('direccion')?.touched){
             @if(this.formRegister.get('direccion')?.errors?.['required']){
@@ -71,8 +71,8 @@
         }
     </p>
     <p>
-        Fecha de nacimiento:
-        <input type="date" formControlName="fecha" required />
+        <label class="form-label">Fecha de nacimiento</label>
+        <input type="date" formControlName="fecha" class="form-control" required />
         @if(this.formRegister.get('fecha')?.touched){
             @if(this.formRegister.get('fecha')?.errors?.['required']){
                 <span style="color: red;">La fecha no puede quedar vacía!</span>
@@ -82,8 +82,8 @@
         }
     </p>
     <p>
-        Sexo:<br />
-        <input type="radio" id="sexo" value="M" formControlName="sexo"  /> Masculino
+        Sexo:<br/>
+        <input type="radio" id="sexo" value="M" formControlName="sexo" /> Masculino
         <input type="radio" id="sexo" value="F" formControlName="sexo"  /> Femenino
         <input type="radio" id="sexo" value="O" formControlName="sexo" /> Otro
 
